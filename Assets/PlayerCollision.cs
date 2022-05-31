@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour {
+    public AudioClip Muerte;
+    public AudioSource fuenteAudio;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -18,6 +20,8 @@ public class PlayerCollision : MonoBehaviour {
     {
         if (col.gameObject.name == "Helice")
         {
+            fuenteAudio.clip = Muerte;
+            fuenteAudio.Play();
             Destroy(gameObject);
         }
     }
